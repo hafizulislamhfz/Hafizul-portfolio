@@ -166,7 +166,7 @@ section .title::after{
 /* home section styling */
 .home{
     display: flex;
-    background: url("images/banner1.jpg") no-repeat center;
+    background: url("../images/banner1.jpg") no-repeat center;
     height: 100vh;
     color: #fff;
     min-height: 500px;
@@ -373,10 +373,13 @@ section .title::after{
     width: 60%;
 }
 .skills-content .right .php::before{
-    width: 50%;
+    width: 70%;
 }
 .skills-content .right .mysql::before{
     width: 70%;
+}
+.skills-content .right .laravel::before{
+    width: 60%;
 }
 
 /* teams section styling */

@@ -71,6 +71,12 @@ $(document).ready(function(){
         }
     });
 
+    //CV download
+    $('#download').click(function(e) {
+      e.preventDefault();
+      window.location.href = 'file_url here';
+    });
+
 
     // get message
     var form = document.getElementById("my-form");
@@ -105,4 +111,11 @@ $(document).ready(function(){
     }
     form.addEventListener("submit", handleSubmit)
 
+
+    // aniamtion part
+    new WOW().init();
+
+    // $(window).on(' click', function(){
+    //   new WOW().init(); 
+    // });
 });
