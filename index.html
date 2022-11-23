@@ -6,7 +6,7 @@
     <title>Hafizul Islam</title>
     <link rel="icon" href="images/hafiz.jpg" type="image/gif/png/jpg">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js"></script>
@@ -39,11 +39,11 @@
     <!-- home section start -->
     <section class="home" id="home">
         <div class="max-width">
-            <div class="home-content wow bounceInDown">
-                <div class="text-1">Hello, my name is</div>
-                <div class="text-2">Hafizul Islam</div>
-                <div class="text-3">And I'm a <span class="typing"></span></div>
-                <a href="#contact" class="wow wow bounceInRight">Hire me</a>
+            <div class="home-content">
+                <div class="text-1" data-aos="fade-up">Hello, my name is</div>
+                <div class="text-2" data-aos="fade-up">Hafizul Islam</div>
+                <div class="text-3" data-aos="fade-up">And I'm a <span class="typing"></span></div>
+                <a href="#contact" class="" data-aos="fade-left">Hire me</a>
             </div>
         </div>
     </section>
@@ -51,12 +51,12 @@
     <!-- about section start -->
     <section class="about" id="about">
         <div class="max-width">
-            <h2 class="title wow slideInLeft">About me</h2>
+            <h2 class="title" data-aos="fade-up">About me</h2>
             <div class="about-content">
-                <div class="column left wow bounceInRight">
+                <div class="column left" data-aos="zoom-in-up">
                     <img src="images/hafiz.jpg" alt="">
                 </div>
-                <div class="column right wow bounceIn">
+                <div class="column right" data-aos="zoom-in-up">
                     <div class="text">I'm Hafizul and I'm a <span class="typing-2"></span></div>
                         <p>I’m a junior full stack developer.I spend my whole day, practically every day, 
                             experimenting with HTML, CSS, and JavaScript; dabbling with PHP and MySQL; 
@@ -67,7 +67,7 @@
                             the state of the art so that I can meet challenges with tools well suited to 
                             the job at hand. The list of projects I follow on GitHub will give you a 
                             good idea of the types of tools I’d prefer to be using.</p>
-                    <a id="download" target="_blank">Download CV</a>
+                    <a id="download" target="_blank" data-aos="flip-up">Download CV</a>
                 </div>
             </div>
         </div>
@@ -76,18 +76,18 @@
     <!-- services section start -->
     <section class="services" id="services">
         <div class="max-width">
-            <h2 class="title wow slideInRight">My services</h2>
+            <h2 class="title" data-aos="fade-up">My services</h2>
             <div class="serv-content">
-                <div class="card">
+                <div class="card" data-aos="flip-up">
                     <div class="box">
                         <i class="fas fa-paint-brush"></i>
                         <div class="text">Web Design</div>
                         <p>I do beautifully modern responsive website design and build trust and confidence in your brand offerings. 
                             I provides SEO-friendly web design services that aim to boost your search rankings, 
-                            increase your online exposure and convert page visitors into paying customers.</p>
+                            and convert page visitors into paying customers.</p>
                     </div>
                 </div>
-                <div class="card">
+                <div class="card" data-aos="flip-down">
                     <div class="box">
                         <i class="fas fa-code"></i>
                         <div class="text">Web Development</div>
@@ -96,7 +96,7 @@
                             increase your online exposure and convert page visitors into paying customers.</p>
                     </div>
                 </div>
-                <div class="card">
+                <div class="card" data-aos="flip-up">
                     <div class="box">
                         <i class="fas fa-paint-brush"></i>
                         <div class="text">Apps Development</div>
@@ -113,14 +113,14 @@
     <!-- skills section start -->
     <section class="skills" id="skills">
         <div class="max-width">
-            <h2 class="title wow bounceIn">My skills</h2>
+            <h2 class="title" data-aos="fade-up">My skills</h2>
             <div class="skills-content">
-                <div class="column left wow bounceInLeft">
+                <div class="column left" data-aos="zoom-in-right">
                     <div class="text">My creative skills & experiences.</div>
                     <p>I am a junior full stack developer.I always try to solve problems in creative way.</p>
                     <a href="https://github.com/hafizulislamhfz" target=”_blank”>Read more</a>
                 </div>
-                <div class="column right wow bounceInRight">
+                <div class="column right" data-aos="zoom-in-left">
                     <div class="bars">
                         <div class="info">
                             <span>HTML</span>
@@ -171,18 +171,18 @@
     <!-- teams section start -->
     <section class="teams" id="teams">
         <div class="max-width">
-            <h2 class="title wow slideInRight">My teams</h2>
+            <h2 class="title" data-aos="fade-up">My teams</h2>
             <div class="carousel owl-carousel">
                 <div class="card">
-                    <div class="box">
+                    <div class="box" data-aos="zoom-in-up">
                         <img src="images/nabila.jpeg" alt="">
-                        <div class="text">Umme Humyra Nabila</i></div>
+                        <div class="text">Humyra Nabila</i></div>
                         <p>Senior <i class="fas fa-heart"></i></p>
                         <p>Student,Hafizul University.</p>
                     </div>
                 </div>
                 <div class="card">
-                    <div class="box">
+                    <div class="box" data-aos="zoom-in-up">
                         <img src="images/saimon.jpeg" alt="">
                         <div class="text">Iftekhar Hossain</div>
                         <p>Friend</p>
@@ -190,7 +190,7 @@
                     </div>
                 </div>
                 <div class="card">
-                    <div class="box">
+                    <div class="box" data-aos="zoom-in-up">
                         <img src="images/sakhawat.jpeg" alt="">
                         <div class="text">Sakhawat Hossain</div>
                         <p>Friend</p>
@@ -198,7 +198,7 @@
                     </div>
                 </div>
                 <div class="card">
-                    <div class="box">
+                    <div class="box" data-aos="zoom-in-up">
                         <img src="images/abid.jpeg" alt="">
                         <div class="text">Abidur Rahman</div>
                         <p>Friend</p>
@@ -212,9 +212,9 @@
     <!-- contact section start -->
     <section class="contact" id="contact">
         <div class="max-width">
-            <h2 class="title wow slideInLeft">Contact me</h2>
+            <h2 class="title" data-aos="fade-up">Contact me</h2>
             <div class="contact-content">
-                <div class="column left">
+                <div class="column left" data-aos="fade-up">
                     <div class="text">Get in Touch</div>
                     <!-- <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dignissimos harum corporis fuga corrupti. Doloribus quis soluta nesciunt veritatis vitae nobis?</p> -->
                     <div class="icons">
@@ -263,7 +263,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="column right">
+                <div class="column right" data-aos="slide-up">
                     <div class="text">Message me</div>
                     <form id="my-form" action="https://formspree.io/f/xbjbbooa" method="POST">
                         <div class="fields">
@@ -280,7 +280,7 @@
                         <div class="field textarea">
                             <textarea messagetype="text" cols="30" rows="10" placeholder="Message.." name="message" Autocomplete="off" required></textarea>
                         </div>
-                        <div class="button-area">
+                        <div class="button-area" data-aos="flip-up">
                             <button id="my-form-button" class="wow slideInRight">Send message</button>
                             <p id="my-form-status"></p>             
                         </div>
@@ -303,6 +303,6 @@
 
 
     <script src="js/script.js"></script>
-    <script src="js/wow.min.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 </body>
 </html>

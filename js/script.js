@@ -74,7 +74,7 @@ $(document).ready(function(){
     //CV download
     $('#download').click(function(e) {
       e.preventDefault();
-      window.location.href = 'file_url here';
+      window.location.href = '#contact';
     });
 
 
@@ -113,9 +113,8 @@ $(document).ready(function(){
 
 
     // aniamtion part
-    new WOW().init();
-
-    // $(window).on(' click', function(){
-    //   new WOW().init(); 
-    // });
+      AOS.init({
+        duration: 1000,
+        delay:50
+      });
 });
