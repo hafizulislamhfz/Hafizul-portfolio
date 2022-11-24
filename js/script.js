@@ -95,6 +95,7 @@ $(document).ready(function(){
       }).then(response => {
         if (response.ok) {
           status.innerHTML = "Your Message Succesfully Sent.";
+          $("#love-messege").delay(8000).fadeOut("slow").show();
           form.reset()
         } else {
           response.json().then(data => {
@@ -119,10 +120,10 @@ $(document).ready(function(){
     });
 
     //preloader
-    $(window).on('load click scroll', function(){
-      $("#preloader").delay(500).fadeOut("slow");
+    $(window).on('load scroll', function(){
+      $("#preloader").delay(1000).fadeOut("slow");
     });
     $('a, .scroll-up-btn').on('click', function(){
-      $("#preloader").delay(500).fadeOut("slow").show();
+      $("#preloader").delay(1500).fadeOut("slow").show();
     });
 });
