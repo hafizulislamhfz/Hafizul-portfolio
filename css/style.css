@@ -6,7 +6,7 @@
     padding: 0;
     box-sizing: border-box;
     text-decoration: none;
-    cursor: url("../images/cursor/cursor.svg"), auto;
+    cursor: url("../images/cursor/cursor.svg") 20 15, auto;
 }
 html{
     scroll-behavior: smooth;
@@ -132,7 +132,7 @@ section .title::after{
 .menu-btn{
     color: #fff;
     font-size: 23px;
-    cursor: url("../images/cursor/tap.svg"), auto;
+    cursor: url("../images/cursor/tap.svg") 20 15, auto;
     display: none;
 }
 .scroll-up-btn{
@@ -149,7 +149,7 @@ section .title::after{
     font-size: 30px;
     border-radius: 6px;
     border-bottom-width: 2px;
-    cursor: url("../images/cursor/tap.svg"), auto;
+    cursor: url("../images/cursor/tap.svg") 15 10, auto;
     opacity: 0;
     pointer-events: none;
     transition: all 0.3s ease;
@@ -213,7 +213,7 @@ section .title::after{
 .home .home-content a:hover{
     color: crimson;
     background: none;
-    cursor: url("../images/cursor/cloud-cursor.svg"), auto;
+    cursor: url("../images/cursor/cloud-cursor.svg") 20 15, auto;
 }
 
 /* about section styling */
@@ -258,7 +258,7 @@ section .title::after{
 .about .about-content .right a:hover{
     color: crimson;
     background: none;
-    cursor: url("../images/cursor/cloud-cursor.svg"), auto;
+    cursor: url("../images/cursor/cloud-cursor.svg") 20 15, auto;
 }
 
 /* services section styling */
@@ -281,7 +281,7 @@ section .title::after{
     text-align: center;
     border-radius: 6px;
     padding: 50px 25px;
-    cursor: url("../images/cursor/cursor.svg"), auto;
+    cursor: url("../images/cursor/cursor.svg") 20 15, auto;
     transition: all 0.3s ease;
 }
 .services .serv-content .card:hover{
@@ -338,7 +338,7 @@ section .title::after{
 .skills .skills-content .left a:hover{
     color: crimson;
     background: none;
-    cursor: url("../images/cursor/cloud-cursor.svg"), auto;
+    cursor: url("../images/cursor/cloud-cursor.svg") 20 15, auto;
 }
 .skills .skills-content .right .bars{
     margin-bottom: 15px;
@@ -482,7 +482,7 @@ section .title::after{
 .contact .contact-content .row a:hover{
     text-decoration: underline;
     color: rgb(250, 0, 146);
-    cursor: url("../images/cursor/tap.svg"), auto;
+    cursor: url("../images/cursor/tap.svg") 20 15, auto;
 }
 .contact .contact-content .row i{
     font-size: 25px;
@@ -543,7 +543,7 @@ section .title::after{
   font-size: 18px;
   font-weight: 500;
   border-radius: 6px;
-  cursor: url("../images/cursor/cloud-cursor.svg"), auto;
+  cursor: url("../images/cursor/cloud-cursor.svg") 20 15, auto;
   flex-wrap: nowrap;
   background: crimson;
   border: 2px solid crimson;
@@ -573,6 +573,15 @@ footer span a:hover{
     text-decoration: underline;
 }
 
+/* preloader  */
+#preloader{
+    background: transparent url(../images/cursor/Loader.svg) no-repeat center center;
+    background-size: 15%;
+    height: 100vh;
+    width: 100%;
+    position:fixed;
+    z-index: 100;
+}
 
 /* responsive media query start */
 @media (max-width: 1104px) {

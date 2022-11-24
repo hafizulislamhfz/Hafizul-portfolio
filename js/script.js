@@ -113,8 +113,16 @@ $(document).ready(function(){
 
 
     // aniamtion part
-      AOS.init({
-        duration: 1000,
-        delay:50
-      });
+    AOS.init({
+      duration: 1000,
+      delay:50
+    });
+
+    //preloader
+    $(window).on('load click scroll', function(){
+      $("#preloader").delay(500).fadeOut("slow");
+    });
+    $('a, .scroll-up-btn').on('click', function(){
+      $("#preloader").delay(500).fadeOut("slow").show();
+    });
 });
