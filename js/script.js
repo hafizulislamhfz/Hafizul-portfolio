@@ -1,12 +1,5 @@
 $(document).ready(function(){
     $(window).scroll(function(){
-        // sticky navbar on scroll script
-        if(this.scrollY > 20){
-            $('.navbar').addClass("sticky");
-        }else{
-            $('.navbar').removeClass("sticky");
-        }
-        
         // scroll-up button show/hide script
         if(this.scrollY > 500){
             $('.scroll-up-btn').addClass("show");
@@ -35,14 +28,14 @@ $(document).ready(function(){
 
     // typing text animation script
     var typed = new Typed(".typing", {
-        strings: ["Junior Developer","Designer", "Freelancer"],
+        strings: ["Fullstack Engineer"],
         typeSpeed: 100,
         backSpeed: 60,
-        loop: true
+        loop: false
     });
 
     var typed = new Typed(".typing-2", {
-        strings: ["Junior Developer","Designer", "Freelancer"],
+        strings: ["Fullstack Engineer"],
         typeSpeed: 100,
         backSpeed: 60,
         loop: true
@@ -60,9 +53,13 @@ $(document).ready(function(){
                 items: 1,
                 nav: false
             },
-            600:{
+            400:{
                 items: 1,
                 nav: false
+            },
+            700:{
+              items: 1,
+              nav: false
             },
             1000:{
                 items: 2,
@@ -71,10 +68,86 @@ $(document).ready(function(){
         }
     });
 
+    
+    //skill title
+    $('.skill').hover(function() {
+      var newText = $(this).data('text');
+      $('#skill-title').text('').append('<span aria-hidden="true" id="skill-title-span">'+newText+'</span>'+newText);
+    }, function() {
+      $('#skill-title').text('').append('<span aria-hidden="true" id="skill-title-span">My Skills</span>My Skills');
+    });
+
+    // $( ".skill" ).mouseenter(function() {
+    //     $(this).prev().addClass("translate");
+    //     $(this).next().addClass("translate");
+    //     $(this).prev().prev().slice(0, 2).addClass("translate1");
+    //     $(this).next().next().slice(0, 2).addClass("translate1");
+    //   });
+      
+    // $( ".skill" ).mouseleave(function() {
+    //   $(this).prev().removeClass("translate");
+    //   $(this).next().removeClass("translate");
+    //   $(this).prev().prev().slice(0, 2).removeClass("translate1");
+    //   $(this).next().next().slice(0, 2).removeClass("translate1");
+    // });
+
+    ///work sections 
+    $('.work-carousel').owlCarousel({
+        margin: 20,
+        loop: true,
+        autoplay: false,
+        autoplayTimeOut: 2000,
+        autoplayHoverPause: true,
+        responsive: {
+            0:{
+                items: 1,
+                nav: false
+            },
+            400:{
+                items: 1,
+                nav: false
+            },
+            700:{
+              items: 1,
+              nav: false
+            },
+            1000:{
+                items: 1,
+                nav: false
+            }
+        }
+    });
+
+    var lastHovered1 = $('.work-1:nth-child(2)');
+    var lastHovered2 = $('.work-2:nth-child(2)');
+
+    $('.work-1:nth-child(2), .work-2:nth-child(2)').addClass('active');
+
+    $('.work-1').hover(
+      function() {
+        lastHovered1.removeClass('active');
+        $(this).addClass('active');
+        lastHovered1 = $(this);
+      }
+    );
+
+    $('.work-2').hover(
+      function() {
+        lastHovered2.removeClass('active');
+        $(this).addClass('active');
+        lastHovered2 = $(this);
+      }
+    );
+    
+
     //CV download
     $('#download').click(function(e) {
-      e.preventDefault();
-      window.location.href = '#contact';
+      var link = $(this);
+      var originalText = link.html();
+      link.html('<i class="fas fa-spinner fa-spin"></i>');
+      setTimeout(function() {
+        link.html(originalText);
+      }, 1000);
     });
 
 
@@ -123,7 +196,7 @@ $(document).ready(function(){
     $(window).on('load scroll', function(){
       $("#preloader").delay(1000).fadeOut("slow");
     });
-    $('a, .scroll-up-btn').on('click', function(){
-      $("#preloader").delay(1500).fadeOut("slow").show();
+    $('.nav-btn, .scroll-up-btn').on('click', function(){
+      $("#preloader").delay(2000).fadeOut("slow").show();
     });
 });
