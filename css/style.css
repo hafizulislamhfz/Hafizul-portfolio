@@ -830,7 +830,7 @@ footer span a:hover {
     font-size: 32px;
   }
   .home .home-content a {
-    font-size: 14px;
+    /* font-size: 14px; */
   }
   .services .carousel .card {
     width: 100%;
@@ -846,13 +846,13 @@ footer span a:hover {
     width: 30%;
   }
   .navbar .social a {
-    margin-right: 10px;
+    /* margin-right: 10px; */
   }
   .home .home-content .text-2 {
-    font-size: 23px;
+    font-size: 27px;
   }
   .home .home-content .text-3 {
-    font-size: 20px;
+    font-size: 23px;
   }
   .about .about-content .right .text,
   .skills .skills-content .left .text {
