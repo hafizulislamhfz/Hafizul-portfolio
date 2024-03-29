@@ -286,10 +286,9 @@ section .title span {
 .home .home-content .text-1 {
   font-size: 27px;
   cursor: pointer !important;
-  background: -webkit-linear-gradient(rgb(227, 215, 215), #acbfd2);
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: white;
 }
+
 .home .home-content .text-2 {
   font-size: 75px;
   font-weight: 600;
@@ -328,18 +327,15 @@ section .title span {
 .home .home-content .text-3 {
   font-size: 40px;
   margin: 5px 0;
-  background: -webkit-linear-gradient(rgb(227, 215, 215), #acbfd2);
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: white;
   cursor: pointer !important;
 }
 .home .home-content .text-3 span {
-  background: radial-gradient(ellipse at bottom, #ffffff 0%, #7496bb 100%);
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #7496bb;
   font-weight: 700;
   cursor: pointer !important;
 }
+
 .home .home-content a {
   display: inline-block;
   background: #fff;
@@ -416,14 +412,11 @@ section .title span {
   font-size: 25px;
   font-weight: 600;
   margin-bottom: 10px;
-  background: -webkit-linear-gradient(rgb(227, 215, 215), #acbfd2);
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: white;
 }
+
 .about .about-content .right .text span {
-  background: radial-gradient(ellipse at bottom, #ffffff 0%, #7496bb 100%);
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #7496bb;
   font-weight: 700;
 }
 .about .about-content .right p {
@@ -457,9 +450,7 @@ section .title span {
   content: "what i provide";
 }
 .services .carousel .card {
-  /* background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%); */
   background: transparent;
-  /* border-radius: 6px; */
   padding: 25px 35px;
   text-align: center;
   overflow: hidden;
@@ -473,7 +464,7 @@ section .title span {
   align-items: center;
   justify-content: center;
   transition: all 0.3s ease;
-  min-height: 290px;
+  min-height: 400px;
   text-align: justify !important;
 }
 .services .carousel .card:hover .box {
@@ -481,18 +472,32 @@ section .title span {
 }
 .services .carousel .card i {
   font-size: 50px;
-  background: radial-gradient(ellipse at bottom, #ffffff 0%, #7496bb 100%);
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #7496bb;
   transition: color 0.3s ease;
 }
 .services .carousel .card .text {
   font-size: 25px;
   font-weight: 600;
+  text-align: center;
   margin: 10px 0 7px 0;
-  background: -webkit-linear-gradient(rgb(227, 215, 215), #acbfd2);
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: white;
+}
+@supports (-webkit-text-fill-color: transparent) and (background-clip: text) {
+  .home .home-content .text-1,
+  .home .home-content .text-3,
+  .about .about-content .right .text,
+  .services .carousel .card .text {
+    background: -webkit-linear-gradient(rgb(227, 215, 215), #acbfd2);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .home .home-content .text-3 span,
+  .about .about-content .right .text span,
+  .services .carousel .card i {
+    background: radial-gradient(ellipse at bottom, #ffffff 0%, #7496bb 100%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 }
 .owl-dots {
   text-align: center;
@@ -543,7 +548,7 @@ section .title span {
 
 .skills .skills-content .skill:hover {
   transform: scale(1.1) translateY(-18px);
-  transition: transform 0.2s ease;
+  transition: transform 0.3s ease-in-out;
 }
 
 .translate {
@@ -584,7 +589,7 @@ section .title span {
   position: relative;
   border: 2px solid white;
   overflow: hidden;
-  height: 500px;
+  height: 490px;
   width: 100px;
   margin-right: 5px;
   transition: all 1s ease;
@@ -610,7 +615,7 @@ section .title span {
   width: 1000px;
 }
 .teams .work-carousel .single-work-section .active img {
-  /* object-fit: fill; */
+  object-fit: fill;
 }
 .teams .work-carousel .single-work-section .active h1 {
   opacity: 1;
@@ -817,6 +822,7 @@ footer span a:hover {
   .max-width {
     padding: 0 23px;
   }
+
   .home .home-content .text-2 {
     font-size: 60px;
   }
@@ -824,7 +830,7 @@ footer span a:hover {
     font-size: 32px;
   }
   .home .home-content a {
-    font-size: 20px;
+    font-size: 14px;
   }
   .services .carousel .card {
     width: 100%;
@@ -832,18 +838,44 @@ footer span a:hover {
 }
 
 @media (max-width: 500px) {
+  section .title::after {
+    font-size: 18px;
+    padding: 0 6px;
+  }
+  .navbar .social {
+    width: 30%;
+  }
+  .navbar .social a {
+    margin-right: 10px;
+  }
   .home .home-content .text-2 {
-    font-size: 50px;
+    font-size: 23px;
   }
   .home .home-content .text-3 {
-    font-size: 27px;
+    font-size: 20px;
   }
   .about .about-content .right .text,
   .skills .skills-content .left .text {
     font-size: 19px;
   }
-  .teams .work-carousel {
-    /* transform: rotate(90deg); */
+  .about .about-content .left div {
+    height: 278px;
+    width: 273px;
+  }
+  .about .about-content .left div::before {
+    top: -25%;
+    left: -27%;
+    width: 400px;
+    height: 400px;
+  }
+  .about .about-content .left div::after {
+    background-size: 244px 259px;
+  }
+  /* .teams .work-carousel {
+    transform: rotate(180deg);
+  } */
+  .teams .work-carousel .single-work-section .single-work img {
+    object-fit: cover;
   }
   .contact .right form .fields {
     flex-direction: column;
@@ -858,8 +890,8 @@ footer span a:hover {
   .scroll-up-btn {
     right: 15px;
     bottom: 15px;
-    height: 38px;
-    width: 35px;
+    height: 34px;
+    width: 45px;
     font-size: 23px;
     line-height: 38px;
   }
@@ -970,7 +1002,7 @@ footer span a:hover {
     bottom: -10%;
     left: -5%;
     transform: scale(1);
-    opacity: 0.6;
+    opacity: 0.8;
   }
   50% {
     bottom: 50%;

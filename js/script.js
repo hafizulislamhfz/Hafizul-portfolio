@@ -1,3 +1,23 @@
+function fadeOutPreloader() {
+  setTimeout(function() {
+    var preloader = document.getElementById('preloader');
+    if (preloader) {
+      preloader.style.transition = 'opacity 0.5s ease';
+      preloader.style.opacity = '0';
+      setTimeout(function() {
+        preloader.style.display = 'none';
+      }, 500);
+    }
+  }, 1000);
+}
+
+window.addEventListener('load', function() {
+  fadeOutPreloader();
+});
+window.addEventListener('scroll', function() {
+  fadeOutPreloader();
+});
+
 $(document).ready(function(){
     $(window).scroll(function(){
         // scroll-up button show/hide script
@@ -95,7 +115,7 @@ $(document).ready(function(){
     $('.work-carousel').owlCarousel({
         margin: 20,
         loop: true,
-        autoplay: false,
+        autoplay: true,
         autoplayTimeOut: 2000,
         autoplayHoverPause: true,
         responsive: {
@@ -120,8 +140,12 @@ $(document).ready(function(){
 
     var lastHovered1 = $('.work-1:nth-child(2)');
     var lastHovered2 = $('.work-2:nth-child(2)');
+    var lastHovered3 = $('.work-3:nth-child(2)');
+    var lastHovered4 = $('.work-4:nth-child(2)');
+    var lastHovered5 = $('.work-5:nth-child(2)');
+    var lastHovered6 = $('.work-6:nth-child(2)');
 
-    $('.work-1:nth-child(2), .work-2:nth-child(2)').addClass('active');
+    $('.work-1:nth-child(2), .work-2:nth-child(2), .work-3:nth-child(2), .work-4:nth-child(2), .work-5:nth-child(2), .work-6:nth-child(2)').addClass('active');
 
     $('.work-1').hover(
       function() {
@@ -138,6 +162,38 @@ $(document).ready(function(){
         lastHovered2 = $(this);
       }
     );
+
+    $('.work-3').hover(
+      function() {
+        lastHovered3.removeClass('active');
+        $(this).addClass('active');
+        lastHovered3 = $(this);
+      }
+    );
+
+    $('.work-4').hover(
+      function() {
+        lastHovered4.removeClass('active');
+        $(this).addClass('active');
+        lastHovered4 = $(this);
+      }
+    );
+
+    $('.work-5').hover(
+      function() {
+        lastHovered5.removeClass('active');
+        $(this).addClass('active');
+        lastHovered5 = $(this);
+      }
+    );
+
+    $('.work-6').hover(
+      function() {
+        lastHovered6.removeClass('active');
+        $(this).addClass('active');
+        lastHovered6 = $(this);
+      }
+    );
     
 
     //CV download
@@ -147,6 +203,7 @@ $(document).ready(function(){
       link.html('<i class="fas fa-spinner fa-spin"></i>');
       setTimeout(function() {
         link.html(originalText);
+        $("#love-messege").delay(8000).fadeOut("slow").show();
       }, 1000);
     });
 
@@ -193,10 +250,10 @@ $(document).ready(function(){
     });
 
     //preloader
-    $(window).on('load scroll', function(){
-      $("#preloader").delay(1000).fadeOut("slow");
-    });
-    $('.nav-btn, .scroll-up-btn').on('click', function(){
-      $("#preloader").delay(2000).fadeOut("slow").show();
-    });
+    // $(window).on('load scroll', function(){
+    //   $("#preloader").delay(1000).fadeOut("slow");
+    // });
+    // $('.nav-btn, .scroll-up-btn').on('click', function(){
+    //   $("#preloader").delay(2000).fadeOut("slow").show();
+    // });
 });
