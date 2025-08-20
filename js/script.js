@@ -128,7 +128,7 @@ $(document).ready(function () {
   $(".work-carousel").owlCarousel({
     margin: 20,
     loop: true,
-    autoplay: true,
+    autoplay: false,
     autoplayTimeOut: 2000,
     autoplayHoverPause: true,
     responsive: {
@@ -157,10 +157,21 @@ $(document).ready(function () {
   var lastHovered4 = $(".work-4:nth-child(2)");
   var lastHovered5 = $(".work-5:nth-child(2)");
   var lastHovered6 = $(".work-6:nth-child(2)");
+  var lastHovered7 = $(".work-7:nth-child(2)");
+  var lastHovered8 = $(".work-8:nth-child(2)");
+  var lastHovered9 = $(".work-9:nth-child(2)");
 
-  $(
-    ".work-1:nth-child(2), .work-2:nth-child(2), .work-3:nth-child(2), .work-4:nth-child(2), .work-5:nth-child(2), .work-6:nth-child(2)"
-  ).addClass("active");
+  $(`
+    .work-1:nth-child(2),
+    .work-2:nth-child(2),
+    .work-3:nth-child(2),
+    .work-4:nth-child(2),
+    .work-5:nth-child(2),
+    .work-6:nth-child(2),
+    .work-7:nth-child(2),
+    .work-8:nth-child(2),
+    .work-9:nth-child(2)
+    `).addClass("active");
 
   $(".work-1").hover(function () {
     lastHovered1.removeClass("active");
@@ -196,6 +207,24 @@ $(document).ready(function () {
     lastHovered6.removeClass("active");
     $(this).addClass("active");
     lastHovered6 = $(this);
+  });
+
+  $(".work-7").hover(function () {
+    lastHovered7.removeClass("active");
+    $(this).addClass("active");
+    lastHovered7 = $(this);
+  });
+
+  $(".work-8").hover(function () {
+    lastHovered8.removeClass("active");
+    $(this).addClass("active");
+    lastHovered8 = $(this);
+  });
+
+  $(".work-9").hover(function () {
+    lastHovered9.removeClass("active");
+    $(this).addClass("active");
+    lastHovered9 = $(this);
   });
 
   //CV download
@@ -248,10 +277,10 @@ $(document).ready(function () {
   form.addEventListener("submit", handleSubmit);
 
   // aniamtion part
-  AOS.init({
-    duration: 1000,
-    delay: 50,
-  });
+  // AOS.init({
+  //   duration: 1000,
+  //   delay: 50,
+  // });
 
   //preloader
   // $(window).on('load scroll', function(){

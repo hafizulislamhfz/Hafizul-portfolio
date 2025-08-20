@@ -42,6 +42,6 @@ for (let i = 0; i <= 300; i++) {
 }
 
 setTimeout(() => {
-    const twoSec = document.getElementById("twoSec");
-    twoSec.remove();
+  const twoSec = document.getElementById("twoSec");
+  twoSec.remove();
 }, 4000);
