@@ -2,8 +2,28 @@
 const stars = document.getElementById("stars");
 const backG = document.getElementById("backG");
 
+// How long a star stays on screen once it starts shooting
+const SHOOT_DURATION = 2000;
+// How often a random star shoots away on its own
+const AUTO_SHOOT_INTERVAL = 3000;
+
+// Send a star shooting away, then replace it with a fresh one
+function shootStar(star, randomAngle) {
+  // Rotate the star
+  star.style.rotate = `${Math.floor(Math.random() * 360) - randomAngle / 5}deg`;
+
+  // Add the shootingStar class to the star
+  star.classList.add("shootingStar");
+
+  // Remove the star once it has finished shooting, and respawn another
+  setTimeout(() => {
+    star.remove();
+    generateStar();
+  }, SHOOT_DURATION);
+}
+
 // Create a function to generate a single star
-function generateStar(randomAngle = Math.floor(Math.random(100) * 360)) {
+function generateStar(randomAngle = Math.floor(Math.random() * 360)) {
   const star = document.createElement("div");
   star.classList.add("singleStar");
 
@@ -19,20 +39,9 @@ function generateStar(randomAngle = Math.floor(Math.random(100) * 360)) {
   // Add the star to the stars element
   stars.appendChild(star);
 
-  // Add a mouseover event listener to the star
-  star.addEventListener("mouseover", () => {
-    // Rotate the star
-    star.style.rotate = `${
-      Math.floor(Math.random(100) * 360) - randomAngle / 5
-    }deg`;
-
-    // Add the shootingStar class to the star
-    star.classList.add("shootingStar");
-
-    // Remove the star after 2 seconds
-    setTimeout(() => {
-      star.style.display = "none";
-    }, 2000);
+  // Shoot the star away on hover
+  star.addEventListener("mouseover", () => shootStar(star, randomAngle), {
+    once: true,
   });
 }
 
@@ -40,6 +49,18 @@ function generateStar(randomAngle = Math.floor(Math.random(100) * 360)) {
 for (let i = 0; i <= 300; i++) {
   generateStar();
 }
+
+// Shoot one random star away every few seconds
+setInterval(() => {
+  // Don't burn through stars while nobody is looking at the tab
+  if (document.hidden) return;
+
+  const idleStars = stars.querySelectorAll(".singleStar:not(.shootingStar)");
+  if (!idleStars.length) return;
+
+  const star = idleStars[Math.floor(Math.random() * idleStars.length)];
+  shootStar(star, Math.floor(Math.random() * 360));
+}, AUTO_SHOOT_INTERVAL);
 
 setTimeout(() => {
   const twoSec = document.getElementById("twoSec");

@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hafizul Islam</title>
-    <link rel="preload" href="files/hafizul.jpeg" as="image" />
-    <link rel="icon" href="files/hafizul.jpeg" type="image/gif/png/jpg" />
+    <link rel="preload" href="files/Hafizul.jpg" as="image" />
+    <link rel="icon" href="files/Hafizul.jpg" type="image/gif/png/jpg" />
     <link rel="stylesheet" href="css/style.css" />
     <!-- <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" /> -->
     <link
@@ -25,7 +25,7 @@
     />
     <meta
       property="og:image"
-      content="https://hafizulislamhfz.github.io/Hafizul-portfolio/files/hafizul.jpeg"
+      content="https://hafizulislamhfz.github.io/Hafizul-portfolio/files/Hafizul.jpg"
     />
     <meta
       property="og:url"
@@ -42,7 +42,7 @@
     />
     <meta
       name="twitter:image"
-      content="https://hafizulislamhfz.github.io/Hafizul-portfolio/files/hafizul.jpeg"
+      content="https://hafizulislamhfz.github.io/Hafizul-portfolio/files/Hafizul.jpg"
     />
   </head>
   <body>
@@ -745,9 +745,14 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <script src="js/script.js"></script>
     <script src="js/star.js"></script>
-    <script
-      src="https://parrotic.ai/api/v1/chat/script?key=a672deae2da852e0703d8ce582bffae8b91782276330276eb00eef60cd5b9309"
-      defer
-    ></script>
+    <script>
+      addEventListener("load", () =>
+        document.body.append(
+          Object.assign(document.createElement("script"), {
+            src: "https://parrotic.ai/api/v1/chat/script?key=a672deae2da852e0703d8ce582bffae8b91782276330276eb00eef60cd5b9309",
+          }),
+        ),
+      );
+    </script>
   </body>
 </html>
